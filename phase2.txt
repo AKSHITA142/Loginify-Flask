@@ -1,0 +1,21 @@
+FORMS
+1-name
+2-POST
+3-MAKE SURE MATCH
+
+-----------------
+
+JINJA 2
+
+1-python values
+{{variable}}
+
+{{name}}
+<p>welcome {{name}}</p>
+
+2-conditionals
+
+{% if  is_topper %}
+<p>you are a topper</p>
+{% else %}
+<p>you need to work hard

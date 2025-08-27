@@ -1,0 +1,16 @@
+<!-- inheritance this code in all files-->
+<!--i'have alreay convert this file into base.html so now i can ignor this file-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+</head>
+<body>
+    <header>...</header>
+    {% block content %} {% endblock %}
+    <footer></footer>
+
+</body>
+</html>
