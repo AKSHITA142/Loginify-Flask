@@ -1,16 +1,76 @@
-<!-- inheritance this code in all files-->
-<!--i'have alreay convert this file into base.html so now i can ignor this file-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Website{% endblock %}</title>
+    <title>{% block title %}My feedback site{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 400px;
+            margin: 60px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <header>...</header>
-    {% block content %} {% endblock %}
-    <footer></footer>
-
+    <header>
+        <h1>Welcome to my site</h1>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <!--This message is only required when the flash comes in pic-->
+    {% with messages=get_flashed_messages() %}
+    {% if messages %}
+    <ul style="color:blue;">
+        {% for msg in messages %}
+        <li>{{msg}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <div class="container">
+        {% block content %} {% endblock %}
+        <footer> @copyright-CODINGPLATFORM</footer>
+    </div>
 </body>
 </html>

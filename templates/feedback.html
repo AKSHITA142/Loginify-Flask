@@ -1,0 +1,28 @@
+{% extends "base1.html" %}
+{% block title %}My Feedback site{% endblock %}
+
+{% block content %}
+<h2>Feedback Form</h2>
+        <form method="POST" action="/">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="username" placeholder="Enter your name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="rating">Rate Us:</label>
+            <select id="rating" required>
+                <option value="">-- Select --</option>
+                <option value="5">⭐️⭐️⭐️⭐️⭐️ Excellent</option>
+                <option value="4">⭐️⭐️⭐️⭐️ Good</option>
+                <option value="3">⭐️⭐️⭐️ Average</option>
+                <option value="2">⭐️⭐️ Poor</option>
+                <option value="1">⭐️ Very Bad</option>
+            </select>
+
+            <label for="message">Your Feedback:</label>
+            <input type="text" name="messege" placeholder="Write ypur feedback..">
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+{% endblock %}
