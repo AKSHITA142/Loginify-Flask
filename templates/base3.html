@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}FLASK-WTF REGISTRASTION{% endblock %}</title>
+</head>
+<body>
+<header>
+  <h1>Flask-wtf Registration</h1>
+  <nav>
+    <a href='/'>Home</a>
+  </nav>
+  {% with messages=get_flashed_messages(with_categories=True) %}
+  {% if messages %}
+    {% for category,msg in messages %}
+      <p style="color:blue;">{{category}}:{{msg}}<p>
+    {% endfor %}
+  {% endif %}
+  {% endwith %}
+  {% block content %} {% endblock %}
+  <footer>@copy.right-CODING PLATFORM</footer>
+</body>
+</html>
